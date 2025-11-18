@@ -1,0 +1,35 @@
+set terminal pngcairo size 1400,1000 enhanced font 'Arial,14'
+set output 'links_plot.png'
+unset border
+unset tics
+unset key
+set xrange [0:1]
+set yrange [0:1.2]
+set label 1 at 0.5,1.15 'Разложение передаточной функции на простые звенья' center front font 'Arial-Bold,20'
+set label 2 at 0.5,1.08 'Исходная функция:' center front font 'Arial-Bold,18'
+set label 3 at 0.5,1.02 'H(s) = {200} / {0.001s^3 + 0.07s^2 + s + 200}' center front font 'Arial,16'
+set label 4 at 0.5,0.95 'Разложение на множители:' center front font 'Arial-Bold,18'
+set label 5 at 0.5,0.89 'H(s) = 200 × {1} / {0.05s + 1} × (0.02s + 1) × (0.001s + 1) × {1} / {0.0001s + 1}' center front font 'Arial,14'
+set label 6 at 0.5,0.82 'Простые звенья:' center front font 'Arial-Bold,18'
+set label 7 at 0.2,0.75 '1. Усилительное звено:' center front font 'Arial-Bold,16'
+set label 8 at 0.2,0.70 'K = 200' center front font 'Arial,14'
+set label 9 at 0.2,0.65 'L(ω) = 20lg(200) ≈ 46 дБ' center front font 'Arial,14'
+set label 10 at 0.2,0.60 'φ(ω) = 0°' center front font 'Arial,14'
+set label 11 at 0.5,0.75 '2. Апериодическое звено:' center front font 'Arial-Bold,16'
+set label 12 at 0.5,0.70 'W(s) = 1 / (0.05s + 1)' center front font 'Arial,14'
+set label 13 at 0.5,0.65 'ω_{ср} = 1/0.05 = 20 рад/с' center front font 'Arial,14'
+set label 14 at 0.5,0.60 'φ(ω): 0° → -90°' center front font 'Arial,14'
+set label 15 at 0.8,0.75 '3. Форсирующее звено:' center front font 'Arial-Bold,16'
+set label 16 at 0.8,0.70 'W(s) = 0.02s + 1' center front font 'Arial,14'
+set label 17 at 0.8,0.65 'ω_{ср} = 1/0.02 = 50 рад/с' center front font 'Arial,14'
+set label 18 at 0.8,0.60 'φ(ω): 0° → +90°' center front font 'Arial,14'
+set label 19 at 0.2,0.45 '4. Форсирующее звено:' center front font 'Arial-Bold,16'
+set label 20 at 0.2,0.40 'W(s) = 0.001s + 1' center front font 'Arial,14'
+set label 21 at 0.2,0.35 'ω_{ср} = 1/0.001 = 1000 рад/с' center front font 'Arial,14'
+set label 22 at 0.2,0.30 'φ(ω): 0° → +90°' center front font 'Arial,14'
+set label 23 at 0.5,0.45 '5. Апериодическое звено:' center front font 'Arial-Bold,16'
+set label 24 at 0.5,0.40 'W(s) = 1 / (0.0001s + 1)' center front font 'Arial,14'
+set label 25 at 0.5,0.35 'ω_{ср} = 1/0.0001 = 10000 рад/с' center front font 'Arial,14'
+set label 26 at 0.5,0.30 'φ(ω): 0° → -90°' center front font 'Arial,14'
+set label 27 at 0.5,0.15 'Асимптотическая ЛАЧХ и ЛФЧХ строятся суммированием характеристик всех звеньев' center front font 'Arial,12'
+plot 2
